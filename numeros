@@ -1,0 +1,27 @@
+#numeros primos possuem apenas dois dividores: 1 e ele mesmo
+
+lista_primos = [2]
+proximo = 2
+
+# lista com 50 numeros primos
+while len(lista_primos) <= 50:
+    proximo += 1
+    proximo_status = ''
+    
+    # calculo de divisão
+    for i in lista_primos:
+        x = proximo / i
+        x_int = proximo // i
+        
+        # verifica se o numero em análise já foi analisado antes
+        if x_int == x:
+            proximo_status = 'n'
+            break
+            
+    # condicional final
+    if proximo_status == 'n':
+        continue
+    else:
+        lista_primos.append(proximo)
+        
+print(lista_primos)
